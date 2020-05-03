@@ -18,7 +18,7 @@ public class Game : MonoBehaviour
     { 
         ScoreText = GameObject.Find("TextScore").GetComponent<Text>();
         clickerButton = GameObject.Find("ClickerButton");
-        inter = GameObject.Find("EventSystem").GetComponent<GoogleInterstitial>();
+        inter = GameObject.Find("GameManager").GetComponent<GoogleInterstitial>();
         Score = 0;
         click = 1;
     }
@@ -31,6 +31,9 @@ public class Game : MonoBehaviour
         if(Score>= 10)
         {
             inter.ShowInter();
+        }else if ( Score >= 420)
+        {
+            PlayGamesController.unlockAchievment("CgkIkYqNutcYEAIQBg");
         }
     }
 
